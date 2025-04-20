@@ -23,11 +23,10 @@ export const Header = () => {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link to="/">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Главная
-                </NavigationMenuLink>
-              </Link>
+              {/* Исправлено: заменен Link компонент на NavigationMenuLink */}
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                <Link to="/">Главная</Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger>О проекте</NavigationMenuTrigger>
@@ -48,25 +47,23 @@ export const Header = () => {
                   <Link to="/history" className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
                     <div className="text-sm font-medium leading-none">История победы</div>
                     <p className="text-sm leading-snug text-muted-foreground">
-                      Важные события и даты
+                      Узнайте о важных событиях и датах
                     </p>
                   </Link>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link to="/materials">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Материалы
-                </NavigationMenuLink>
-              </Link>
+              {/* Исправлено: заменен Link компонент на NavigationMenuLink */}
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                <Link to="/materials">Материалы</Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link to="/contact">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Контакты
-                </NavigationMenuLink>
-              </Link>
+              {/* Исправлено: заменен Link компонент на NavigationMenuLink */}
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                <Link to="/contact">Контакты</Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
