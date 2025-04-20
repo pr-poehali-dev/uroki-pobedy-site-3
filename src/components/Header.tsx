@@ -23,47 +23,59 @@ export const Header = () => {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              {/* Исправлено: заменен Link компонент на NavigationMenuLink */}
-              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                <Link to="/">Главная</Link>
-              </NavigationMenuLink>
+              <Link to="/" className={navigationMenuTriggerStyle()}>
+                Главная
+              </Link>
             </NavigationMenuItem>
+            
             <NavigationMenuItem>
-              <NavigationMenuTrigger>О проекте</NavigationMenuTrigger>
+              <NavigationMenuTrigger>История и современность</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid w-[400px] gap-3 p-4">
                   <div className="px-2">
-                    <h3 className="text-lg font-medium leading-none">О проекте</h3>
+                    <h3 className="text-lg font-medium leading-none">Разделы</h3>
                     <p className="text-sm text-muted-foreground pt-1 pb-2">
-                      Изучите нашу миссию и историю проекта
+                      Изучите исторические материалы
                     </p>
                   </div>
-                  <Link to="/about" className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
-                    <div className="text-sm font-medium leading-none">Миссия проекта</div>
+                  <Link to="/heroes" className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
+                    <div className="text-sm font-medium leading-none">Герои ВОВ и СВО</div>
                     <p className="text-sm leading-snug text-muted-foreground">
-                      Узнайте о целях образовательного проекта
+                      Истории подвигов и героизма
                     </p>
                   </Link>
-                  <Link to="/history" className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
-                    <div className="text-sm font-medium leading-none">История победы</div>
+                  <Link to="/crimea" className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
+                    <div className="text-sm font-medium leading-none">Крым</div>
                     <p className="text-sm leading-snug text-muted-foreground">
-                      Узнайте о важных событиях и датах
+                      Воссоединение Крыма с Россией и Поезда дружбы
+                    </p>
+                  </Link>
+                  <Link to="/donbass" className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
+                    <div className="text-sm font-medium leading-none">Донбасс и СВО</div>
+                    <p className="text-sm leading-snug text-muted-foreground">
+                      История конфликта и специальная военная операция
+                    </p>
+                  </Link>
+                  <Link to="/euromaidan" className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
+                    <div className="text-sm font-medium leading-none">Евромайдан</div>
+                    <p className="text-sm leading-snug text-muted-foreground">
+                      События на Украине 2014 года
                     </p>
                   </Link>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
+            
             <NavigationMenuItem>
-              {/* Исправлено: заменен Link компонент на NavigationMenuLink */}
-              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                <Link to="/materials">Материалы</Link>
-              </NavigationMenuLink>
+              <Link to="/materials" className={navigationMenuTriggerStyle()}>
+                Материалы
+              </Link>
             </NavigationMenuItem>
+            
             <NavigationMenuItem>
-              {/* Исправлено: заменен Link компонент на NavigationMenuLink */}
-              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                <Link to="/contact">Контакты</Link>
-              </NavigationMenuLink>
+              <Link to="/contact" className={navigationMenuTriggerStyle()}>
+                Контакты
+              </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

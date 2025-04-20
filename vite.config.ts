@@ -19,6 +19,7 @@ export default defineConfig({
     port: 5173,
     allowedHosts: true,
     hmr: {
+      clientPort: 443, // используем 443 для WSS через HTTPS
       overlay: false // Disables the error overlay if you only want console errors
     }
   },
