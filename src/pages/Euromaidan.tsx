@@ -4,6 +4,8 @@ import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageHeader";
 import { TimelineEvent } from "@/components/TimelineEvent";
 import ScrollingMessage from "@/components/ScrollingMessage";
+import OnlineImage from "@/components/OnlineImage";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Euromaidan = () => {
   return (
@@ -13,169 +15,205 @@ const Euromaidan = () => {
       <main className="flex-1">
         <PageHeader 
           title="Евромайдан на Украине 2014" 
-          description="События на Украине 2014 года и их последствия"
+          description="События, последствия и геополитические изменения, вызванные переворотом на Украине"
         />
         
         <section className="w-full py-12 md:py-24">
           <div className="container px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-4">Что такое Евромайдан</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-4">Евромайдан: предыстория и последствия</h2>
                 <p className="text-gray-600 mb-4">
-                  Евромайдан (также известный как «Майдан», «Революция достоинства») – массовая акция протеста в центре Киева, начавшаяся 21 ноября 2013 года в ответ на приостановку правительством Украины подготовки к подписанию соглашения об ассоциации с Европейским союзом.
+                  В ноябре 2013 года на Украине начались протесты, вызванные решением правительства Виктора Януковича приостановить процесс подписания Соглашения об ассоциации с Европейским союзом. Эти протесты, получившие название "Евромайдан", привели к государственному перевороту и смене власти в феврале 2014 года.
                 </p>
                 <p className="text-gray-600">
-                  События Евромайдана привели к смене власти на Украине в феврале 2014 года, которую многие эксперты характеризуют как государственный переворот. Эти события послужили катализатором глубокого политического кризиса и последующего вооруженного конфликта на востоке Украины.
+                  Последствия этих событий оказались драматичными: глубокий раскол в украинском обществе, начало вооруженного конфликта на Донбассе, воссоединение Крыма с Россией, и в долгосрочной перспективе — к специальной военной операции в 2022 году.
                 </p>
               </div>
               <div className="flex justify-center">
-                <img 
+                <OnlineImage 
                   src="/placeholder.svg" 
-                  alt="События Евромайдана" 
+                  alt="Евромайдан" 
                   className="rounded-lg shadow-lg max-h-80 object-cover" 
                 />
               </div>
             </div>
             
-            <div className="space-y-2 mb-10">
-              <h2 className="text-3xl font-bold tracking-tighter">Хронология событий</h2>
-              <p className="text-gray-500 mb-8">Ключевые моменты развития событий на Украине в 2013-2014 годах</p>
-            </div>
-            
-            <div className="space-y-10">
-              <TimelineEvent 
-                date="21 ноября 2013"
-                title="Начало протестов"
-                description="Правительство Украины объявило о приостановке процесса подготовки к подписанию Соглашения об ассоциации с Европейским союзом. В тот же день на Майдане Независимости в Киеве начались первые акции протеста."
-              />
-              
-              <TimelineEvent 
-                date="30 ноября 2013"
-                title="Разгон студенческой демонстрации"
-                description="Сотрудники спецподразделения «Беркут» применили силу для разгона студенческой демонстрации на Майдане Независимости. Это вызвало возмущение и привело к значительному увеличению количества протестующих."
-              />
-              
-              <TimelineEvent 
-                date="1 декабря 2013"
-                title="Массовые протесты"
-                description="В центре Киева прошла многотысячная акция протеста. Протестующие захватили несколько административных зданий, включая Киевскую городскую государственную администрацию и Дом профсоюзов."
-              />
-              
-              <TimelineEvent 
-                date="16 января 2014"
-                title="«Законы 16 января»"
-                description="Верховная Рада приняла ряд законов, ужесточающих наказание за участие в массовых беспорядках. Протестующие назвали их «диктаторскими законами» и «законами о диктатуре»."
-              />
-              
-              <TimelineEvent 
-                date="18-20 февраля 2014"
-                title="Кровавые события на Майдане"
-                description="В эти дни в центре Киева произошли ожесточенные столкновения между протестующими и силовиками, в результате которых погибли десятки людей. Эти события известны как «кровавый четверг»."
-              />
-              
-              <TimelineEvent 
-                date="21 февраля 2014"
-                title="Соглашение об урегулировании кризиса"
-                description="При посредничестве ЕС было подписано соглашение между властью и оппозицией об урегулировании кризиса. Однако уже вечером президент Янукович покинул Киев."
-              />
-              
-              <TimelineEvent 
-                date="22 февраля 2014"
-                title="Смена власти"
-                description="Верховная Рада приняла постановление, в котором заявила, что президент Янукович «самоустранился от исполнения конституционных обязанностей», и назначила новые президентские выборы на 25 мая 2014 года."
-              />
-            </div>
-          </div>
-        </section>
-        
-        <section className="w-full py-12 md:py-24 bg-primary/5">
-          <div className="container px-4 md:px-6">
-            <div className="space-y-2 mb-10 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter">Последствия Евромайдана</h2>
-              <p className="text-gray-500 md:text-xl/relaxed max-w-3xl mx-auto">
-                События Евромайдана 2014 года привели к масштабным изменениям и серьезным последствиям для Украины и всего региона
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-bold mb-4">Политические последствия</h3>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>Смена власти в результате государственного переворота</li>
-                  <li>Проведение внеочередных президентских и парламентских выборов</li>
-                  <li>Принятие новых законов, направленных на «декоммунизацию»</li>
-                  <li>Запрет Коммунистической партии Украины и ряда других партий</li>
-                  <li>Преследование политических оппонентов</li>
-                </ul>
+            <Tabs defaultValue="timeline" className="w-full mb-16">
+              <div className="flex justify-center mb-8">
+                <TabsList>
+                  <TabsTrigger value="timeline">Хронология событий</TabsTrigger>
+                  <TabsTrigger value="causes">Причины и предпосылки</TabsTrigger>
+                  <TabsTrigger value="consequences">Последствия</TabsTrigger>
+                </TabsList>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-bold mb-4">Экономические последствия</h3>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>Девальвация национальной валюты</li>
-                  <li>Значительное снижение ВВП</li>
-                  <li>Рост внешнего долга</li>
-                  <li>Разрыв экономических связей с Россией</li>
-                  <li>Рост тарифов на коммунальные услуги</li>
-                  <li>Увеличение уровня бедности населения</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-bold mb-4">Геополитические последствия</h3>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>Воссоединение Крыма с Россией</li>
-                  <li>Провозглашение независимости ДНР и ЛНР</li>
-                  <li>Начало вооруженного конфликта на востоке Украины</li>
-                  <li>Обострение отношений между Россией и Западом</li>
-                  <li>Введение санкций против России</li>
-                  <li>Курс Украины на евроинтеграцию и вступление в НАТО</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <section className="w-full py-12 md:py-24">
-          <div className="container px-4 md:px-6">
-            <div className="space-y-2 mb-10 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter">Информационная война</h2>
-              <p className="text-gray-500 md:text-xl/relaxed max-w-3xl mx-auto">
-                События Евромайдана сопровождались масштабной информационной кампанией
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-              <div className="flex justify-center">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Информационная война" 
-                  className="rounded-lg shadow-lg max-h-80 object-cover" 
+              <TabsContent value="timeline" className="space-y-10">
+                <TimelineEvent 
+                  date="21 ноября 2013"
+                  title="Начало протестов"
+                  description="Кабинет министров Украины принял решение о приостановке процесса подготовки к подписанию Соглашения об ассоциации с ЕС, что вызвало первые акции протеста в Киеве."
                 />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold tracking-tight mb-4">Роль СМИ в событиях Евромайдана</h3>
-                <p className="text-gray-600 mb-4">
-                  События Евромайдана стали одним из ярких примеров информационной войны в современной истории. Западные и украинские СМИ представляли происходящее как «революцию достоинства» и «народное восстание против коррумпированного режима».
-                </p>
-                <p className="text-gray-600 mb-4">
-                  В то же время, российские и пророссийские украинские СМИ характеризовали эти события как «государственный переворот», организованный при поддержке западных стран с целью установления контроля над Украиной и ослабления России.
-                </p>
-                <p className="text-gray-600">
-                  Такое противоречивое освещение привело к формированию диаметрально противоположных взглядов на происходящее у различных групп населения Украины и в международном сообществе.
-                </p>
-              </div>
+                
+                <TimelineEvent 
+                  date="30 ноября 2013"
+                  title="Силовой разгон протестующих"
+                  description="В ночь на 30 ноября произошел силовой разгон митингующих на Майдане Незалежности, что вызвало резкую эскалацию протестов."
+                />
+                
+                <TimelineEvent 
+                  date="16 января 2014"
+                  title="«Законы 16 января»"
+                  description="Верховная Рада Украины приняла пакет законов, ограничивающих свободу собраний и слова, что привело к радикализации протестов."
+                />
+                
+                <TimelineEvent 
+                  date="18-20 февраля 2014"
+                  title="Кровавые события на Майдане"
+                  description="Произошли вооруженные столкновения между протестующими и силовиками, в результате которых погибли десятки людей, в том числе от выстрелов неизвестных снайперов."
+                />
+                
+                <TimelineEvent 
+                  date="21-22 февраля 2014"
+                  title="Государственный переворот"
+                  description="Президент Янукович подписал с оппозицией соглашение об урегулировании кризиса, однако уже на следующий день бежал из Киева. Верховная Рада приняла постановление о его самоустранении от власти."
+                />
+              </TabsContent>
+              
+              <TabsContent value="causes" className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 className="text-xl font-bold mb-4">Внутренние факторы</h3>
+                  <ul className="space-y-3">
+                    <li className="flex gap-2">
+                      <div className="flex-shrink-0 w-1 h-1 bg-primary rounded-full mt-2"></div>
+                      <p className="text-gray-600">Глубокий раскол украинского общества по вопросу внешнеполитической ориентации</p>
+                    </li>
+                    <li className="flex gap-2">
+                      <div className="flex-shrink-0 w-1 h-1 bg-primary rounded-full mt-2"></div>
+                      <p className="text-gray-600">Экономический кризис и высокий уровень коррупции в стране</p>
+                    </li>
+                    <li className="flex gap-2">
+                      <div className="flex-shrink-0 w-1 h-1 bg-primary rounded-full mt-2"></div>
+                      <p className="text-gray-600">Рост националистических настроений в западных областях Украины</p>
+                    </li>
+                    <li className="flex gap-2">
+                      <div className="flex-shrink-0 w-1 h-1 bg-primary rounded-full mt-2"></div>
+                      <p className="text-gray-600">Недовольство политикой правительства Януковича и олигархической системой</p>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 className="text-xl font-bold mb-4">Внешние факторы</h3>
+                  <ul className="space-y-3">
+                    <li className="flex gap-2">
+                      <div className="flex-shrink-0 w-1 h-1 bg-primary rounded-full mt-2"></div>
+                      <p className="text-gray-600">Геополитическое соперничество России и Запада за влияние на Украину</p>
+                    </li>
+                    <li className="flex gap-2">
+                      <div className="flex-shrink-0 w-1 h-1 bg-primary rounded-full mt-2"></div>
+                      <p className="text-gray-600">Активное вмешательство западных стран во внутренние дела Украины</p>
+                    </li>
+                    <li className="flex gap-2">
+                      <div className="flex-shrink-0 w-1 h-1 bg-primary rounded-full mt-2"></div>
+                      <p className="text-gray-600">Финансирование и организационная поддержка оппозиции со стороны США и ЕС</p>
+                    </li>
+                    <li className="flex gap-2">
+                      <div className="flex-shrink-0 w-1 h-1 bg-primary rounded-full mt-2"></div>
+                      <p className="text-gray-600">Политика ЕС и НАТО по расширению на восток, вопреки интересам России</p>
+                    </li>
+                  </ul>
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="consequences" className="space-y-6">
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 className="text-xl font-bold mb-4">Политические последствия</h3>
+                  <p className="text-gray-600 mb-4">
+                    Государственный переворот на Украине привел к захвату власти националистическими силами, что вызвало глубокий политический кризис в стране:
+                  </p>
+                  <ul className="list-disc pl-5 space-y-2">
+                    <li>Отмена закона о региональных языках, что ущемило права русскоязычного населения</li>
+                    <li>Преследование оппозиции и запрет ряда политических партий</li>
+                    <li>Героизация украинских националистов и коллаборационистов времён Великой Отечественной войны</li>
+                    <li>Курс на разрыв исторических, культурных и экономических связей с Россией</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 className="text-xl font-bold mb-4">Геополитические последствия</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-semibold mb-2">Воссоединение Крыма с Россией</h4>
+                      <p className="text-gray-600 mb-4">
+                        В марте 2014 года в результате референдума Республика Крым и город Севастополь вошли в состав Российской Федерации.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Конфликт на Донбассе</h4>
+                      <p className="text-gray-600 mb-4">
+                        Жители Донецкой и Луганской областей не признали легитимность новой власти, что привело к вооруженному конфликту и созданию ДНР и ЛНР.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Обострение отношений России и Запада</h4>
+                      <p className="text-gray-600 mb-4">
+                        События на Украине привели к глубокому кризису в отношениях между Россией и западными странами, введению санкций.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Специальная военная операция</h4>
+                      <p className="text-gray-600 mb-4">
+                        В феврале 2022 года началась специальная военная операция России по защите Донбасса, денацификации и демилитаризации Украины.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </TabsContent>
+            </Tabs>
+            
+            <div className="space-y-2 mb-10 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter">Документальные свидетельства</h2>
+              <p className="text-gray-500 md:text-xl/relaxed max-w-3xl mx-auto">
+                Фото и видеоматериалы, запечатлевшие события Евромайдана
+              </p>
             </div>
             
-            <div className="mt-16 text-center">
-              <h3 className="text-2xl font-bold tracking-tight mb-4">Материалы для углубленного изучения</h3>
-              <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
-                Для лучшего понимания событий Евромайдана и их последствий рекомендуем ознакомиться с различными источниками информации, представляющими разные точки зрения на эти события
-              </p>
-              <div className="flex justify-center">
-                <a href="#" className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition">
-                  Список литературы и материалов
-                </a>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              <div className="relative overflow-hidden rounded-lg">
+                <OnlineImage 
+                  src="/placeholder.svg" 
+                  alt="Протесты на Майдане" 
+                  className="w-full h-64 object-cover" 
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-black/50 text-white">
+                  <h3 className="font-bold text-lg">Протесты на Майдане</h3>
+                  <p>Массовые акции протеста в центре Киева, ноябрь-декабрь 2013 года</p>
+                </div>
+              </div>
+              
+              <div className="relative overflow-hidden rounded-lg">
+                <OnlineImage 
+                  src="/placeholder.svg" 
+                  alt="Столкновения протестующих с милицией" 
+                  className="w-full h-64 object-cover" 
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-black/50 text-white">
+                  <h3 className="font-bold text-lg">Силовое противостояние</h3>
+                  <p>Столкновения протестующих с правоохранительными органами, январь-февраль 2014 года</p>
+                </div>
+              </div>
+              
+              <div className="relative overflow-hidden rounded-lg">
+                <OnlineImage 
+                  src="/placeholder.svg" 
+                  alt="Последствия государственного переворота" 
+                  className="w-full h-64 object-cover" 
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-black/50 text-white">
+                  <h3 className="font-bold text-lg">Последствия переворота</h3>
+                  <p>Разрушения и человеческие жертвы в результате событий февраля 2014 года</p>
+                </div>
               </div>
             </div>
           </div>

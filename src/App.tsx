@@ -10,6 +10,7 @@ import Heroes from "./pages/Heroes";
 import Crimea from "./pages/Crimea";
 import Donbass from "./pages/Donbass";
 import Euromaidan from "./pages/Euromaidan";
+import VideoLessons from "./pages/VideoLessons";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/crimea" element={<Crimea />} />
           <Route path="/donbass" element={<Donbass />} />
           <Route path="/euromaidan" element={<Euromaidan />} />
+          <Route path="/video-lessons" element={<VideoLessons />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

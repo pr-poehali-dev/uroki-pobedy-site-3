@@ -1,6 +1,8 @@
 
 import { Link } from "react-router-dom";
-import { 
+import { Logo } from "./Logo";
+import { useOnlineStatus } from "@/hooks/use-online-status";
+import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -9,76 +11,95 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Logo } from "./Logo";
 
 export const Header = () => {
+  const isOnline = useOnlineStatus();
+  
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b shadow-sm">
-      <div className="container flex items-center justify-between h-16 px-4 md:px-6">
-        <Link to="/" className="flex items-center gap-2">
-          <Logo className="h-10 w-auto" />
-          <span className="font-bold text-xl text-primary">Уроки Победы</span>
-        </Link>
-        
+    <header className="bg-white border-b">
+      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+        <div className="flex items-center gap-2">
+          <Logo />
+          <div className="hidden md:flex">
+            <Link to="/" className="flex items-center gap-2 font-bold text-xl">
+              Уроки Победы
+            </Link>
+          </div>
+        </div>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link to="/" className={navigationMenuTriggerStyle()}>
-                Главная
+              <Link to="/">
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Главная
+                </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
-            
             <NavigationMenuItem>
-              <NavigationMenuTrigger>История и современность</NavigationMenuTrigger>
+              <NavigationMenuTrigger>Разделы</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[400px] gap-3 p-4">
-                  <div className="px-2">
-                    <h3 className="text-lg font-medium leading-none">Разделы</h3>
-                    <p className="text-sm text-muted-foreground pt-1 pb-2">
-                      Изучите исторические материалы
-                    </p>
-                  </div>
-                  <Link to="/heroes" className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
-                    <div className="text-sm font-medium leading-none">Герои ВОВ и СВО</div>
-                    <p className="text-sm leading-snug text-muted-foreground">
-                      Истории подвигов и героизма
-                    </p>
-                  </Link>
-                  <Link to="/crimea" className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
-                    <div className="text-sm font-medium leading-none">Крым</div>
-                    <p className="text-sm leading-snug text-muted-foreground">
-                      Воссоединение Крыма с Россией и Поезда дружбы
-                    </p>
-                  </Link>
-                  <Link to="/donbass" className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
-                    <div className="text-sm font-medium leading-none">Донбасс и СВО</div>
-                    <p className="text-sm leading-snug text-muted-foreground">
-                      История конфликта и специальная военная операция
-                    </p>
-                  </Link>
-                  <Link to="/euromaidan" className="block select-none space-y-1 rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
-                    <div className="text-sm font-medium leading-none">Евромайдан</div>
-                    <p className="text-sm leading-snug text-muted-foreground">
-                      События на Украине 2014 года
-                    </p>
-                  </Link>
-                </div>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <li>
+                    <Link to="/heroes">
+                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">Герои ВОВ и СВО</div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          Истории героев Великой Отечественной войны и СВО
+                        </p>
+                      </NavigationMenuLink>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/crimea">
+                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">Крым и его возвращение</div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          История возвращения Крыма в состав России и Поезда дружбы
+                        </p>
+                      </NavigationMenuLink>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/donbass">
+                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">Донбасс и СВО</div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          История конфликта и специальная военная операция
+                        </p>
+                      </NavigationMenuLink>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/euromaidan">
+                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">Евромайдан на Украине</div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          События 2014 года на Украине и их последствия
+                        </p>
+                      </NavigationMenuLink>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/video-lessons">
+                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">Видеоуроки</div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          Коллекция видеоуроков о Великой Отечественной войне
+                        </p>
+                      </NavigationMenuLink>
+                    </Link>
+                  </li>
+                </ul>
               </NavigationMenuContent>
-            </NavigationMenuItem>
-            
-            <NavigationMenuItem>
-              <Link to="/materials" className={navigationMenuTriggerStyle()}>
-                Материалы
-              </Link>
-            </NavigationMenuItem>
-            
-            <NavigationMenuItem>
-              <Link to="/contact" className={navigationMenuTriggerStyle()}>
-                Контакты
-              </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <div className={`w-2 h-2 rounded-full ${isOnline ? 'bg-green-500' : 'bg-red-500'}`}></div>
+            <span className="text-xs text-gray-500">{isOnline ? 'Онлайн' : 'Оффлайн'}</span>
+          </div>
+        </div>
       </div>
     </header>
   );
