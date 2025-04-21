@@ -3,11 +3,13 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageHeader";
 import { TimelineEvent } from "@/components/TimelineEvent";
+import ScrollingMessage from "@/components/ScrollingMessage";
 
 const Crimea = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
+      <ScrollingMessage />
       <main className="flex-1">
         <PageHeader 
           title="Крым и его возвращение в состав России" 
