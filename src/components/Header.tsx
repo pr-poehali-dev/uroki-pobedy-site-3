@@ -29,64 +29,53 @@ export const Header = () => {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link to="/">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Главная
-                </NavigationMenuLink>
+              {/* Исправление вложенности тегов <a> - используем span вместо NavigationMenuLink */}
+              <Link to="/" className={navigationMenuTriggerStyle()}>
+                Главная
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Разделы</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  <li>
+                  <li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                     <Link to="/heroes">
-                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Герои ВОВ и СВО</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Истории героев Великой Отечественной войны и СВО
-                        </p>
-                      </NavigationMenuLink>
+                      <div className="text-sm font-medium leading-none">Герои ВОВ и СВО</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        Истории героев Великой Отечественной войны и СВО
+                      </p>
                     </Link>
                   </li>
-                  <li>
+                  <li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                     <Link to="/crimea">
-                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Крым и его возвращение</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          История возвращения Крыма в состав России и Поезда дружбы
-                        </p>
-                      </NavigationMenuLink>
+                      <div className="text-sm font-medium leading-none">Крым и его возвращение</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        История возвращения Крыма в состав России и Поезда дружбы
+                      </p>
                     </Link>
                   </li>
-                  <li>
+                  <li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                     <Link to="/donbass">
-                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Донбасс и СВО</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          История конфликта и специальная военная операция
-                        </p>
-                      </NavigationMenuLink>
+                      <div className="text-sm font-medium leading-none">Донбасс и СВО</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        История конфликта и специальная военная операция
+                      </p>
                     </Link>
                   </li>
-                  <li>
+                  <li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                     <Link to="/euromaidan">
-                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Евромайдан на Украине</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          События 2014 года на Украине и их последствия
-                        </p>
-                      </NavigationMenuLink>
+                      <div className="text-sm font-medium leading-none">Евромайдан на Украине</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        События 2014 года на Украине и их последствия
+                      </p>
                     </Link>
                   </li>
-                  <li>
+                  <li className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                     <Link to="/video-lessons">
-                      <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Видеоуроки</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Коллекция видеоуроков о Великой Отечественной войне
-                        </p>
-                      </NavigationMenuLink>
+                      <div className="text-sm font-medium leading-none">Видеоуроки</div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        Коллекция видеоуроков о Великой Отечественной войне
+                      </p>
                     </Link>
                   </li>
                 </ul>
