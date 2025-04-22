@@ -1,24 +1,41 @@
 
+import OnlineImage from './OnlineImage';
+
 interface TimelineEventProps {
   date: string;
   title: string;
   description: string;
+  imageSrc: string;
+  imageAlt: string;
+  reverse?: boolean;
 }
 
-export const TimelineEvent = ({ date, title, description }: TimelineEventProps) => {
+export const TimelineEvent = ({
+  date,
+  title,
+  description,
+  imageSrc,
+  imageAlt,
+  reverse = false
+}: TimelineEventProps) => {
   return (
-    <div className="relative pl-8 sm:pl-12 py-2">
-      <div className="flex flex-col sm:flex-row items-start mb-1">
-        <div className="absolute left-0 top-2 sm:top-3 flex items-center justify-center">
-          <div className="h-4 w-4 rounded-full bg-primary"></div>
-          <div className="h-full w-[2px] absolute top-4 left-[7px] bg-primary/20"></div>
+    <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center`}>
+      <div className="w-full md:w-1/2">
+        <div className="space-y-3">
+          <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+            {date}
+          </div>
+          <h3 className="text-2xl font-bold">{title}</h3>
+          <p className="text-gray-600">{description}</p>
         </div>
-        <div className="sm:min-w-[120px] font-semibold text-sm sm:text-base text-primary mr-4">
-          {date}
-        </div>
-        <h3 className="text-xl font-bold">{title}</h3>
       </div>
-      <p className="text-gray-600 ml-0 sm:ml-[120px] sm:mr-4">{description}</p>
+      <div className="w-full md:w-1/2">
+        <OnlineImage
+          src={imageSrc}
+          alt={imageAlt}
+          className="w-full rounded-lg shadow-md"
+        />
+      </div>
     </div>
   );
 };

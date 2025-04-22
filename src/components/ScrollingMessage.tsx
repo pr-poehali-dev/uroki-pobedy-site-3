@@ -1,49 +1,39 @@
 
 import { useEffect, useState } from 'react';
 
-interface ScrollingMessageProps {
-  className?: string;
-}
+const messages = {
+  0: "★ Поздравляем с Днем Победы! Вечная память героям! ★", // Воскресенье
+  1: "★ День воинской доблести и славы! Помним подвиги героев! ★", // Понедельник
+  2: "★ Уважение и благодарность ветеранам Великой Отечественной войны! ★", // Вторник
+  3: "★ Слава защитникам Родины! Гордимся подвигами наших героев! ★", // Среда
+  4: "★ Память о героях войны вечно живет в наших сердцах! ★", // Четверг
+  5: "★ Поддерживаем наших военнослужащих, участвующих в СВО! ★", // Пятница
+  6: "★ Россия - страна героев, страна победителей! ★" // Суббота
+};
 
-export const ScrollingMessage = ({ className }: ScrollingMessageProps) => {
-  const [message, setMessage] = useState<string>('');
+const ScrollingMessage = () => {
+  const [message, setMessage] = useState("");
   
   useEffect(() => {
-    // Массив поздравлений на каждый день недели
-    const dailyMessages = [
-      "С Днем Победы! Помним и гордимся подвигом наших героев!", // Воскресенье
-      "Великие подвиги не забываются! Честь и слава героям!", // Понедельник
-      "Помним и чтим: история нашей Родины – история мужества и стойкости!", // Вторник
-      "Урок памяти и благодарности: гордимся нашей историей!", // Среда
-      "Страницы истории: неразрывная связь времен и поколений!", // Четверг
-      "Память о героях объединяет наши сердца!", // Пятница
-      "Наши предки – наша гордость! Помним о подвигах и чтим традиции!" // Суббота
-    ];
+    const updateMessage = () => {
+      const day = new Date().getDay();
+      setMessage(messages[day as keyof typeof messages]);
+    };
     
-    // Определяем текущий день недели (0 - воскресенье, 6 - суббота)
-    const today = new Date().getDay();
-    
-    // Устанавливаем сообщение соответствующее дню недели
-    setMessage(dailyMessages[today]);
+    updateMessage();
     
     // Обновляем сообщение каждые 24 часа
-    const intervalId = setInterval(() => {
-      const newDay = new Date().getDay();
-      setMessage(dailyMessages[newDay]);
-    }, 86400000); // 24 часа в миллисекундах
+    const interval = setInterval(updateMessage, 24 * 60 * 60 * 1000);
     
-    return () => clearInterval(intervalId);
+    return () => clearInterval(interval);
   }, []);
   
   return (
-    <div className={`bg-primary text-white py-2 overflow-hidden ${className}`}>
-      <div className="animate-marquee whitespace-nowrap">
-        <span className="text-sm md:text-base font-medium mx-4">★</span>
-        <span className="text-sm md:text-base font-medium">{message}</span>
-        <span className="text-sm md:text-base font-medium mx-4">★</span>
-        <span className="text-sm md:text-base font-medium">{message}</span>
-        <span className="text-sm md:text-base font-medium mx-4">★</span>
-        <span className="text-sm md:text-base font-medium">{message}</span>
+    <div className="w-full bg-primary text-white py-2 overflow-hidden">
+      <div className="scrolling-text-container">
+        <p className="scrolling-text text-sm font-medium">
+          {message}
+        </p>
       </div>
     </div>
   );
